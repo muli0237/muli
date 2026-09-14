@@ -26,6 +26,7 @@
   --glass-bg: rgba(17, 24, 39, 0.55);
   --glass-border: rgba(0, 240, 255, 0.25);
   --overlay-dark: rgba(5, 7, 10, 0.6);
+  --site-backdrop: url('/scifi-backdrop.jpg');
 
   /* Glows & Shadows */
   --glow-primary: 0 0 16px rgba(0, 240, 255, 0.6);
@@ -155,6 +156,46 @@
     background: rgba(0, 240, 255, 0.7);
     box-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
   }
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(5, 7, 10, 0.72), rgba(5, 7, 10, 0.82)), var(--site-backdrop);
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 20%, rgba(0, 240, 255, 0.08), transparent 42%), linear-gradient(rgba(5, 7, 10, 0.12), rgba(5, 7, 10, 0.32));
+}
+
+.launch-sequence {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background: #05070a;
+}
+
+.launch-sequence__grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.25;
+  background-image: linear-gradient(rgba(0, 240, 255, .08) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 240, 255, .08) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(circle, black, transparent 75%);
 }
 
 /* Reduced Motion Override */

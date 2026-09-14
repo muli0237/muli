@@ -162,13 +162,13 @@ export function TechStackMarquee() {
           <div>
             <div className="flex items-center gap-2 font-oxanium text-xs text-[#00f0ff] mb-2">
               <span className="w-2 h-2 rounded-full bg-[#00ffa3] animate-pulse" />
-              <span className="font-bold tracking-wider">[SECTION // 03] TELEMETRY &amp; COMPETENCIES</span>
+              <span className="font-bold tracking-wider">[SECTION // 03] COMPETENCIES</span>
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold font-oxanium text-[#e5e7eb] tracking-tight">
               TECHNICAL COMPETENCIES
             </h2>
             <p className="font-sans text-[#9ca3af] text-sm sm:text-base mt-2 max-w-xl leading-relaxed">
-              Core technical proficiencies across offensive cybersecurity, distributed backend microservices, cloud orchestration, and responsive frontend systems.
+              A practical toolkit spanning product interfaces, backend services, cloud infrastructure, and security-minded delivery.
             </p>
           </div>
 

@@ -5,7 +5,7 @@ import Image from 'next/image'
 import { motion, AnimatePresence } from 'motion/react'
 import { SciCard } from '@/components/ui/sci-card'
 import { soundFx } from '@/lib/sound-effects'
-import { ExternalLink, Github, Eye, Shield, Activity, X, Terminal, Cpu, Database, CheckCircle2 } from 'lucide-react'
+import { ExternalLink, Github, Eye, X, Terminal, Cpu, CheckCircle2 } from 'lucide-react'
 
 interface Project {
   id: string
@@ -18,9 +18,6 @@ interface Project {
   image: string
   coordinates: string
   sector: string
-  securityRating: string
-  throughput: string
-  encryption: string
   architecture: string
   highlights: string[]
 }
@@ -38,9 +35,6 @@ const projects: Project[] = [
     image: '/cybersecurity-penetration-testing-dashboard.jpg',
     coordinates: 'LAT: 37.7749°N | LON: 122.4194°W',
     sector: 'SEC-09 // CYBER_COMMAND',
-    securityRating: 'CLASS-A+ CERTIFIED',
-    throughput: '45,000 SCANS/MIN',
-    encryption: 'TLS 1.3 / E2EE',
     architecture: 'Microservices with isolated Kali worker containers & Redis queue',
     highlights: [
       'Automated Nmap and Nikto port and vulnerability scanner',
@@ -60,9 +54,6 @@ const projects: Project[] = [
     image: '/modern-ecommerce-dashboard.png',
     coordinates: 'LAT: 40.7128°N | LON: 74.0060°W',
     sector: 'SEC-04 // COMMERCE_CORE',
-    securityRating: 'PCI-DSS LEVEL 1 COMPLIANT',
-    throughput: '12,500 RPS BENCHMARK',
-    encryption: 'AES-256-GCM AT REST',
     architecture: 'Containerized Next.js App Router with Redis lock caching and ACID transactions',
     highlights: [
       'Distributed Redis mutex locks preventing stock race conditions',
@@ -82,9 +73,6 @@ const projects: Project[] = [
     image: '/data-analytics-dashboard.png',
     coordinates: 'LAT: 51.5074°N | LON: 0.1278°W',
     sector: 'SEC-12 // TELEMETRY_ARRAY',
-    securityRating: 'SOC-2 TYPE II READY',
-    throughput: '2.8M DATA POINTS/SEC',
-    encryption: 'HMAC-SHA256 SIGNED',
     architecture: 'Django Async Workers + Celery cluster reading from partitioned PostgreSQL',
     highlights: [
       'Interactive D3.js real-time streaming radar and time-series histograms',
@@ -104,9 +92,6 @@ const projects: Project[] = [
     image: '/cms-content-management-interface.jpg',
     coordinates: 'LAT: 35.6762°N | LON: 139.6503°E',
     sector: 'SEC-07 // CONTENT_GRID',
-    securityRating: 'ISO 27001 AUDITED',
-    throughput: '8,200 REQ/SEC',
-    encryption: 'KMS MANAGED ENCRYPTION',
     architecture: 'Modular NestJS micro-gateway with GraphQL DataLoader and AWS S3 presigned URLs',
     highlights: [
       'Granular hierarchical RBAC policies with attribute-based access control',
@@ -126,9 +111,6 @@ const projects: Project[] = [
     image: '/school-management-dashboard.png',
     coordinates: 'LAT: -1.2921°S | LON: 36.8219°E',
     sector: 'SEC-02 // INSTITUTION_NET',
-    securityRating: 'FERPA & GDPR ALIGNED',
-    throughput: '5,000 ACTIVE SESSIONS',
-    encryption: 'BCRYPT 12-ROUNDS + AES',
     architecture: 'React SPA backed by Node.js REST API with Redis session clustering',
     highlights: [
       'Multi-tenant database schema isolation per department',
@@ -182,7 +164,7 @@ export function ProjectsCarousel() {
               FEATURED PROJECTS
             </h2>
             <p className="font-sans text-[#9ca3af] text-sm sm:text-base mt-2 max-w-2xl leading-relaxed">
-              Production-grade systems and offensive security architectures engineered for high throughput, sub-millisecond edge resolution, and zero-trust data integrity.
+              Selected products, platforms, and experiments built with thoughtful architecture, clear interfaces, and practical engineering.
             </p>
           </div>
 
@@ -279,18 +261,6 @@ export function ProjectsCarousel() {
                   <p className="font-sans text-xs text-[#9ca3af] mt-2.5 leading-relaxed line-clamp-3">
                     {project.description}
                   </p>
-                </div>
-
-                {/* Metrics Strip */}
-                <div className="grid grid-cols-2 gap-2 p-2.5 bg-[#0b1020] border border-[#00f0ff]/20 rounded text-xs font-mono">
-                  <div>
-                    <span className="text-[10px] text-zinc-400 block">SECURITY:</span>
-                    <span className="text-[#00ffa3] font-bold text-[11px]">{project.securityRating}</span>
-                  </div>
-                  <div>
-                    <span className="text-[10px] text-zinc-400 block">THROUGHPUT:</span>
-                    <span className="text-[#00f0ff] font-bold text-[11px]">{project.throughput}</span>
-                  </div>
                 </div>
 
                 {/* Interactive Tech Stack Badges styled as sharp rectangular pills */}
@@ -417,27 +387,6 @@ export function ProjectsCarousel() {
                     <p className="font-sans text-xs text-[#9ca3af] leading-relaxed">
                       {selectedProject.architecture}
                     </p>
-                  </div>
-
-                  <div className="p-4 bg-[#05070a] border border-[#7c3aed]/25 rounded-md">
-                    <div className="text-xs font-oxanium text-[#7c3aed] font-bold mb-2 flex items-center gap-1.5">
-                      <Shield className="w-3.5 h-3.5 text-[#7c3aed]" />
-                      <span>SECURITY PROFILE</span>
-                    </div>
-                    <div className="space-y-1 text-xs font-mono">
-                      <div className="flex justify-between">
-                        <span className="text-zinc-500">Rating:</span>
-                        <span className="text-[#00ffa3] font-bold">{selectedProject.securityRating}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-zinc-500">Encryption:</span>
-                        <span className="text-zinc-300">{selectedProject.encryption}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-zinc-500">Throughput:</span>
-                        <span className="text-[#00f0ff]">{selectedProject.throughput}</span>
-                      </div>
-                    </div>
                   </div>
 
                   <div className="p-4 bg-[#05070a] border border-[#00ffa3]/20 rounded-md">

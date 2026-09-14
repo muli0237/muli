@@ -27,7 +27,7 @@ const oxanium = Oxanium({
 export const metadata: Metadata = {
   title: "Joshua Muli | Full-Stack Engineer & Security Researcher",
   description:
-    "Cyberpunk and futuristic developer workspace portfolio of Joshua Muli. Full-Stack Engineer and Security Researcher featuring interactive 3D WebGL scenes, terminal emulator, and live telemetry.",
+    "Portfolio of Joshua Muli, a full-stack engineer building resilient web products, distributed systems, and thoughtful digital experiences.",
   keywords: [
     "Joshua Muli",
     "full-stack developer",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     url: "https://joshua-muli.dev",
     title: "Joshua Muli | Full-Stack Engineer & Security Researcher",
     description:
-      "Cyberpunk and futuristic developer workspace portfolio of Joshua Muli. Full-Stack Engineer and Security Researcher featuring interactive 3D WebGL scenes, terminal emulator, and live telemetry.",
+      "Portfolio of Joshua Muli, a full-stack engineer building resilient web products, distributed systems, and thoughtful digital experiences.",
     siteName: "Joshua Muli Portfolio",
   },
 }
