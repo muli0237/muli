@@ -1,0 +1,56 @@
+/* Splash Cursor Styles */
+
+/* Hide default cursor when splash cursor is active */
+body.splash-cursor-active {
+  cursor: none;
+}
+
+body.splash-cursor-active * {
+  cursor: none !important;
+}
+
+/* Keep pointer cursor on interactive elements */
+body.splash-cursor-active a,
+body.splash-cursor-active button,
+body.splash-cursor-active input,
+body.splash-cursor-active textarea,
+body.splash-cursor-active select,
+body.splash-cursor-active [role="button"],
+body.splash-cursor-active [onclick] {
+  cursor: none !important;
+}
+
+/* Pulse animation for click effect */
+@keyframes splash-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  body.splash-cursor-active {
+    cursor: auto;
+  }
+  
+  body.splash-cursor-active * {
+    cursor: auto !important;
+  }
+}
+
+/* Mobile - disable custom cursor */
+@media (hover: none) and (pointer: coarse) {
+  body.splash-cursor-active {
+    cursor: auto;
+  }
+  
+  body.splash-cursor-active * {
+    cursor: auto !important;
+  }
+}
+

@@ -1,0 +1,6 @@
+{
+  "name": "Joshua Muli Portfolio",
+  "description": "Portfolio of Joshua Muli, Full-Stack Engineer and Security Researcher featuring interactive components, animations, and security terminal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
